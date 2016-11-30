@@ -1,0 +1,12 @@
+{
+  "name": "yovideo-ionic",
+  "app_id": "42bc2f7e",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

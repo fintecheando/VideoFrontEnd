@@ -1,0 +1,46 @@
+<ion-view cache-view="false" view-title={{categoryName}} ng-init="init();">
+	<div class="content-wrapper">
+		<ion-view>
+			<ion-content>
+				<div class="content-inner">
+					<div class="clearfix row-custom">
+						<ion-refresher
+							pulling-text="Pull to refresh..."
+							on-refresh="refreshCategoryData()">
+						</ion-refresher>
+						<ion-list>
+								<ion-item class="col-50" ng-repeat="video in categoryData" ng-click="openVideo({{video.id}})">
+								  <!-- Start Item Grid	 -->
+										<div class="item-grid-video">
+											<div class="thumbnail">
+												<img actual-src="{{video.url_image}}" ng-src="img/default.jpg">
+											</div>
+											<div class="content">
+												<a href="#" onclick="return false;" class="title">{{video.title}}</a>
+												<div class="author">
+													By <a onclick="return false;" href="#">{{video.author}}</a>
+												</div>
+												<div class="meta clearfix">
+													<div class="views">
+														<i class="is-icon-view"></i>
+														<span class="count">{{video.stats.views}}</span>
+													</div>
+													<div class="category">
+														<a href="#"></a>
+													</div>
+												</div>
+											</div>
+										</div>
+								</ion-item>
+						 </ion-list>
+						<ion-infinite-scroll
+							ng-if="canLoadMoreCategoryData"
+							on-infinite="loadMoreCategoryData()"
+							distance="5%">
+						</ion-infinite-scroll>
+					</div>
+				</div>
+			</ion-content>
+		</ion-view>
+	</div>
+</ion-view>

@@ -1,0 +1,86 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content edge-drag-threshold="false" drag-content="false">
+    <ion-nav-bar class="bar-stable is-bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <a href="#/app/search" class="button button-icon button-clear is-icon-magnifying-glass">
+        </a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="is-slidemenu">
+    <ion-content>
+      <div class="header-menu" ng-if="isLoggedIn()===false">
+        <div class="row text-center">
+          <div class="col-50">
+            <a href="#" class="link login" menu-close ng-click="login()">
+              Login
+            </a>
+          </div>
+          <div class="col-50">
+            <a href="#" class="link register" menu-close ng-click="register()">
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header-menu logged-in clearfix" ng-if="isLoggedIn()===true">
+          <a href="#" class="link logout" ng-click="doLogout()"><i class="is-icon-logout"></i></a>
+          <a href="#" class="link notifation"><i class="is-icon-notifation"></i><span class="count">12</span></a>
+          <a href="#/app/account" menu-close class="avatar">
+            <img actual-src="{{userInfo.avatar}}" ng-src="img/default.jpg">
+          </a>
+          <div class="info">
+            <span class="name">{{userInfo.firstname}} {{userInfo.lastname}}</span>
+            <span class="phone" ng-if="userInfo.phone!=''"><i class="is-icon-technology"></i> {{userInfo.phone}}</span>
+          </div>
+      </div>
+      <ion-list>
+        <ion-item menu-close ng-class="activeMenu('home')" href="#/app/home">
+          <i class="is-icon-house"></i>
+          Home
+        </ion-item>
+        <ion-item menu-close ng-class="activeMenu('categories')" href="#/app/categories">
+          <i class="is-icon-video-player"></i>
+          Categories
+        </ion-item>
+        <ion-item menu-close onclick="window.open('http://inspius.com/about-us/', '_blank', 'location=no'); return false;">
+          <i class="is-icon-avatar"></i>
+          About Us
+        </ion-item>
+        <ion-item menu-close onclick="window.open('http://inspius.com', '_blank', 'location=no'); return false;">
+          <i class="is-icon-agenda"></i>
+          Term and Conditions
+        </ion-item>
+        <ion-item menu-close onclick="window.plugins.socialsharing.share('YoVideo', null, null, 'http://inspius.com');">
+          <i class="is-icon-share"></i>
+          Share
+        </ion-item>
+        <ion-item menu-close ng-click="appRate();">
+          <i class="is-icon-star"></i>
+          Rate
+        </ion-item>
+		<ion-item menu-close ng-click="sendMail();">
+          <i class="is-icon-envelope"></i>
+          Contact us
+        </ion-item>
+        <!--<ion-item menu-close href="#/app/download">
+          <i class="is-icon-download-from-cloud"></i>
+          My Download
+        </ion-item>
+         <ion-item menu-close href="#/app/wishlist">
+          <i class="is-icon-heart"></i>
+          My Wishlist
+        </ion-item>-->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

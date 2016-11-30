@@ -1,0 +1,95 @@
+<ion-view view-title="Home">
+	<div class="content-wrapper">
+	  	<ion-tabs class="tabs-top tabs-striped is-tab-2-columns">
+		 	<ion-tab title="Latest">
+		 		<ion-view>
+			        <ion-content>
+			        	<div class="content-inner">
+			        		<div class="clearfix row-custom">
+								<ion-refresher
+									pulling-text="Pull to refresh..."
+									on-refresh="refreshLatestViewData()">
+								</ion-refresher>
+								<ion-list>
+										<ion-item class="col-50" ng-repeat="video in latestViewData" ng-click="openVideo({{video.id}})">
+										  <!-- Start Item Grid	 -->
+												<div class="item-grid-video">
+													<div class="thumbnail">
+														<img actual-src="{{video.url_image}}" ng-src="img/default.jpg">
+													</div>
+													<div class="content">
+														<a href="#" onclick="return false;" class="title">{{video.title}}</a>
+														<div class="author">
+															By <a onclick="return false;" href="#">{{video.author}}</a>
+														</div>
+														<div class="meta clearfix">
+															<div class="views">
+																<i class="is-icon-view"></i>
+																<span class="count">{{video.stats.views}}</span>
+															</div>
+															<div class="category">
+																<a href="#"></a>
+															</div>
+														</div>
+													</div>
+												</div>
+										</ion-item>
+								 </ion-list>
+								<ion-infinite-scroll
+									ng-if="canLoadMoreLatestData"
+									on-infinite="loadMoreLatestViewData()"
+									distance="5%">
+								</ion-infinite-scroll>
+			        		</div>
+			        	</div>
+			        </ion-content>
+		      	</ion-view>
+		 	</ion-tab>
+		 
+		 	<ion-tab title="Most View">
+		 		<ion-view>
+			        <ion-content>
+			        	<div class="content-inner">
+			        		<div class="clearfix row-custom">
+								<ion-refresher
+									pulling-text="Pull to refresh..."
+									on-refresh="refreshMostViewData()">
+								</ion-refresher>
+								<ion-list>
+									<ion-item class="col-50" ng-repeat="video in mostViewData" ng-click="openVideo({{video.id}})">
+									  <!-- Start Item Grid	 -->
+											<div class="item-grid-video">
+												<div class="thumbnail">
+													<img actual-src="{{video.url_image}}" ng-src="img/default.jpg">
+												</div>
+												<div class="content">
+													<a href="#" onclick="return false;" class="title">{{video.title}}</a>
+													<div class="author">
+														By <a onclick="return false;" href="#">{{video.author}}</a>
+													</div>
+													<div class="meta clearfix">
+														<div class="views">
+															<i class="is-icon-view"></i>
+															<span class="count">{{video.stats.views}}</span>
+														</div>
+														<div class="category">
+															<a href="#"></a>
+														</div>
+													</div>
+												</div>
+											</div>
+									</ion-item>
+								 </ion-list>
+								<ion-infinite-scroll
+									ng-if="canLoadMoreMostViewData"
+									on-infinite="loadMoreMostViewData()"
+									distance="5%">
+								</ion-infinite-scroll>
+			        		</div>
+			        	</div>
+			        </ion-content>
+		      	</ion-view>
+		 	</ion-tab>
+		</ion-tabs>
+	</div>
+</ion-view>

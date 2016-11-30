@@ -1,0 +1,35 @@
+{
+  "name": "yovideo-ionic",
+  "version": "1.1.1",
+  "description": "yovideo-ionic: An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-sass": "^2.0.4",
+    "gulp-concat": "^2.2.0",
+    "gulp-minify-css": "^0.3.0",
+    "gulp-rename": "^1.2.0"
+  },
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "gulp-util": "^3.0.7",
+    "shelljs": "^0.3.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard",
+    "cordova-plugin-inappbrowser",
+    "cordova-plugin-x-socialsharing",
+    "cordova-plugin-apprate",
+    "cordova-plugin-facebook4 --save --variable APP_ID='960685170696563' --variable APP_NAME='yovideo-ionic'",
+    "cordova-plugin-admobpro",
+	"cordova-plugin-email-composer"
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
+}

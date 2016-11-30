@@ -1,0 +1,53 @@
+<ion-view view-title="Search" class="search-page">
+	<ion-header-bar class="bar-search clearfix">
+		<form name="searchForm" ng-submit="doSearch(searchForm)" novalidate="">
+			<div class="item-input-inset">
+				<label class="item-input-wrapper">
+					<i class="icon ion-ios-search placeholder-icon"></i>
+					<input type="search" ng-model="searchFormData.keyword" name="keyword" placeholder="Search">
+				</label>
+				<button type="submit" class="button button-small button-positive">
+					Search
+				</button>
+			</div>
+		</form>
+	</ion-header-bar>
+  	<ion-content class="has-tabs-top">
+  		<div class="content-inner">
+  			<div class="content-inner">
+				<div class="clearfix row-custom">
+					<ion-list>
+							<ion-item class="col-50" ng-repeat="video in searchData" ng-click="openVideo({{video.id}})">
+							  <!-- Start Item Grid	 -->
+									<div class="item-grid-video">
+										<div class="thumbnail">
+											<img actual-src="{{video.url_image}}" ng-src="img/default.jpg">
+										</div>
+										<div class="content">
+											<a href="#" onclick="return false;" class="title">{{video.title}}</a>
+											<div class="author">
+												By <a onclick="return false;" href="#">{{video.author}}</a>
+											</div>
+											<div class="meta clearfix">
+												<div class="views">
+													<i class="is-icon-view"></i>
+													<span class="count">{{video.stats.views}}</span>
+												</div>
+												<div class="category">
+													<a href="#"></a>
+												</div>
+											</div>
+										</div>
+									</div>
+							</ion-item>
+					 </ion-list>
+					<ion-infinite-scroll
+						ng-if="canLoadMoreSearchData"
+						on-infinite="loadMoreSearchData()"
+						distance="5%">
+					</ion-infinite-scroll>
+				</div>
+			</div>
+  		</div>
+  	</ion-content>
+</ion-view>

@@ -1,0 +1,52 @@
+<ion-view view-title="{{videoData.title}}" class="item-detail">
+	<div class="content-wrapper">
+		<ion-content>
+			<div class="thumbnail">
+				<iframe ng-if="getVideoType()=='FACEBOOK'" name="f29620ab78" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:video Facebook Social Plugin" src="{{video_url}}" class=""></iframe>
+				<video ng-if="getVideoType()=='MP3'" poster="{{videoData.url_image}}" controls><source src="{{video_url}}" type="audio/mpeg"></video>
+				<video ng-if="getVideoType()=='UPLOAD'" src="{{video_url}}" poster="{{videoData.url_image}}"></video>
+				<iframe ng-if="getVideoType()=='VIMEO'" src="{{video_url}}"></iframe>
+				<iframe ng-if="getVideoType()=='YOUTUBE'" src="{{video_url}}"></iframe>
+			</div>
+			<div class="title">
+				<span>{{videoData.title}}</span>
+			</div>
+			<div class="social">
+				<div class="row text-center">
+					<div class="col-25">
+						<span class="is-icon-view"></span>
+						{{videoData.stats.views}}
+					</div>
+					<div class="col-25">
+						<span class="is-icon-like"></span>
+						{{videoData.stats.likes}}
+					</div>
+					<div class="col-25" ng-click="shareVideo()">
+						<a href="#" onclick="return false;">
+							<span class="is-icon-share"></span>
+							{{videoData.stats.shares}}
+						</a>
+
+					</div>
+					<div class="col-25">
+						<span class="is-icon-download-from-cloud"></span>
+						{{videoData.stats.downloads}}
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="meta">
+					<span class="category">
+						Category: Life
+					</span>
+					<span class="author">
+						By: <a href="#">{{videoData.author}}</a>
+					</span>
+				</div>
+				<div class="description">
+					{{videoData.description}}
+				</div>
+			</div>
+		</ion-content>
+	</div>
+</ion-view>

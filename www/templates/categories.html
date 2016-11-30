@@ -1,0 +1,38 @@
+<ion-view view-title="Categories" class="category-list">
+	<ion-content>
+		<div class="header-wrapper">
+			<div class="list-vertical">
+				<ion-scroll direction="x">
+				  	<div class="row">
+						<div class="col-custom" ng-repeat="(key, category) in categoryData">
+								<div class="box-item-circle">
+									<div class="inner color-{{key}}" ng-click="openCategory({{category.id}})">
+										<img src="{{category.icon}}" alt="">
+									</div>
+								</div>
+						</div>
+				  	</div>
+				</ion-scroll>
+			</div> <!-- End List Vertical -->
+			<div class="title">
+				All Categories
+			</div>
+		</div>
+		<div class="all-categories">
+			  <!-- Start Item Grid	 -->
+			<div class="row-custom">
+				<div class="col-50" ng-repeat="category in categoryData">
+					<div class="category-item" ng-click="openCategory({{category.id}})">
+						<img actual-src="{{category.image}}" ng-src="img/default.jpg" alt="" class="img-responsive">
+						<div class="icon">
+							<img src="{{category.icon}}">
+						</div>
+						<span class="title">
+							{{category.name}}
+						</span>
+					</div>
+				</div>
+			</div>		
+		</div>
+	</ion-content>
+</ion-view>

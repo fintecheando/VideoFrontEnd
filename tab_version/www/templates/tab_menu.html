@@ -1,0 +1,88 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content edge-drag-threshold="false" drag-content="false">
+    <ion-nav-bar ng-class="hideBackButton()" class="bar-stable is-bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view name="mainContent"></ion-nav-view>
+
+    <ion-tabs class="is-tab-menu tabs-icon-only tabs-background-black tabs-striped tabs-color-light">
+      <!-- Home Tab -->
+      <ion-tab icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/app/home">
+      </ion-tab>
+
+      <!-- Categories Tab -->
+      <ion-tab icon-off="is-icon-video-player" icon-on="is-icon-video-player" href="#/app/categories">
+      </ion-tab>
+
+      <!-- Search Tab -->
+      <ion-tab icon-off="ion-ios-search-strong" icon-on="ion-ios-search-strong" href="#/app/search">
+      </ion-tab>
+
+      <!-- Menu Tab -->
+      <ion-tab icon-off="ion-navicon" icon-on="ion-navicon" ng-click="toggleLeftSideMenu()">
+      </ion-tab>
+
+    </ion-tabs>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" class="is-slidemenu">
+    <ion-content>
+      <div class="header-menu" ng-if="isLoggedIn()===false">
+        <div class="row text-center">
+          <div class="col-50">
+            <a href="#" class="link login" menu-close ng-click="login()">
+              Login
+            </a>
+          </div>
+          <div class="col-50">
+            <a href="#" class="link register" menu-close ng-click="register()">
+              Register
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header-menu logged-in clearfix" ng-if="isLoggedIn()===true">
+          <a href="#" class="link logout" ng-click="doLogout()"><i class="is-icon-logout"></i></a>
+          <a href="#" class="link notifation"><i class="is-icon-notifation"></i><span class="count">12</span></a>
+          <a href="#/app/account" menu-toggle="left" class="avatar">
+            <img actual-src="{{userInfo.avatar}}" ng-src="img/default.jpg">
+          </a>
+          <div class="info">
+            <span class="name">{{userInfo.firstname}} {{userInfo.lastname}}</span>
+            <span class="phone" ng-if="userInfo.phone!=''"><i class="is-icon-technology"></i> {{userInfo.phone}}</span>
+          </div>
+      </div>
+      <ion-list>
+        <ion-item menu-close onclick="window.open('http://inspius.com/about-us/', '_blank', 'location=no'); return false;">
+          <i class="is-icon-avatar"></i>
+          About Us
+        </ion-item>
+        <ion-item menu-close onclick="window.open('http://inspius.com', '_blank', 'location=no'); return false;">
+          <i class="is-icon-agenda"></i>
+          Term and Conditions
+        </ion-item>
+        <ion-item menu-close onclick="window.plugins.socialsharing.share('YoVideo', null, null, 'http://inspius.com');">
+          <i class="is-icon-share"></i>
+          Share
+        </ion-item>
+        <ion-item menu-close ng-click="appRate();">
+          <i class="is-icon-star"></i>
+          Rate
+        </ion-item>
+        <ion-item menu-close ng-click="sendMail();">
+          <i class="is-icon-envelope"></i>
+          Contact us
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+</ion-side-menus>

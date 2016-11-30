@@ -1,0 +1,29 @@
+.is-bar-stable{
+	.is-bar-stable{
+		background: #000;
+		color: #fff;
+	}
+	.button.button-clear,
+	.header-item{
+		color: #fff!important;
+	}
+
+	.is-icon-magnifying-glass{
+		&:before{
+			font-size: 18px!important;
+		}
+		
+	}
+
+	.bar-header{
+		.back-button{
+			.ion-ios-arrow-back{
+				&:before{
+					font-size: 25px;
+				}
+			}
+		}
+	}
+}
+
+

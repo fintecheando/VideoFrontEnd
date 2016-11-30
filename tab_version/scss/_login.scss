@@ -1,0 +1,132 @@
+.modal-inspius{
+	background: url(../img/bg-login.jpg);
+	background-size: cover;
+
+	&.modal-forgotpass{
+		.header{
+			color: #fff;
+			position: relative;
+			margin-bottom: 30px;
+			.title{
+				font-size: 18px;
+				margin: 10px 0 20px;
+			}
+			.description{
+				margin: 0 10px;
+			}
+		}
+		.list-inset{
+			[class*="icon-"]{
+				margin-right: 10px;
+			}
+			.item-button{
+				padding-top: 0;
+			}
+		}
+	}
+	.scroll-content,
+	.list-inset,
+	.bar{
+		background: transparent;
+		padding: 0;
+		border: 0;
+	}
+
+	.list-inset{
+		margin-left: 40px;
+		margin-right: 40px;
+		input{
+			width: 100%;
+			color: #fff;
+		}
+		.item-input{
+			color: #fff;
+			border-bottom: 1px solid #fff;
+			margin: 0 16px;
+			padding: 6px 3px;
+			margin-bottom: 20px;
+			input{
+				padding-right: 0;
+			}
+		}
+		.invalid-required{
+			margin-top: -15px;
+			margin-bottom: 10px;
+			color: $main-color;
+			margin-left: 15px;
+		}
+
+		[class*="icon-"]{
+			margin-right: 25px;
+		}
+		input,
+		[class*="icon-"]{
+			font-size: 18px;
+		}
+		.button{
+			font-size: 18px;
+			min-height: 45px;
+			line-height: 45px;
+		}
+		.item-button{
+			padding-top: 20px;
+			
+		}
+
+		.forgot-password{
+			display: block;
+			color: #fff;
+			text-decoration: none;
+			text-align: center;
+			margin: 0 0 30px;
+		}
+
+	}
+
+	.input-label{
+		color: #fff;
+	}
+
+	.item{
+		background: transparent;
+		border: 0;
+	}
+
+	.header{
+		margin: 40px 0;
+		.logo{
+			text-align: center;
+			img{
+				width: 70px;
+				height: 70px;
+			}
+		}
+		.close{
+			color: #fff;
+			text-decoration: none;
+			font-size: 20px;
+			display: inline-block;
+			padding: 20px 40px;
+			position: absolute;
+			top: -20px;
+			left: 0;
+		}
+	}
+
+	.footer{
+		.link{
+			background: rgba(#000, 0.5);
+			padding: 16px 30px;
+			font-size: 16px;
+			margin-bottom: 20px;
+			a{
+				color: #fff;
+				text-decoration: none;
+				[class*="icon-"]{
+					float: right;
+				}
+			}
+		}
+	}
+}
+
