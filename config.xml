@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ionicframework.yovideoionic" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>yovideo-ionic</name>
+<widget id="com.ionicframework.scotiabankmx" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ScotiaBankMX</name>
     <description>
         An Ionic Framework and Cordova project.
     </description>
-    <author email="envato@inspius.com" href="http://inspius.com">
-      Inspius Singapore Pte. Ltd
+    <author email="envato@inspius.com" href="http://www.dsnibble.com.mx">
+      DS Nibble S.A. de C.V.
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -71,9 +71,5 @@
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
         <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
     </platform>
-    <icon src="resources/ios/icon/icon-small@3x.png" />
-    <plugin name="cordova-plugin-facebook4" spec="~1.7.1">
-        <variable name="APP_ID" value="960685170696563" />
-        <variable name="APP_NAME" value="yovideo-ionic" />
-    </plugin>
+    <icon src="resources/ios/icon/icon-small@3x.png" />    
 </widget>

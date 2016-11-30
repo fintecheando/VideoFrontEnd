@@ -1,7 +1,7 @@
 {
-  "name": "yovideo-ionic",
+  "name": "ScotiaBankMX",
   "version": "1.1.1",
-  "description": "yovideo-ionic: An Ionic project",
+  "description": "ScotiaBankMX: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
@@ -23,10 +23,9 @@
     "ionic-plugin-keyboard",
     "cordova-plugin-inappbrowser",
     "cordova-plugin-x-socialsharing",
-    "cordova-plugin-apprate",
-    "cordova-plugin-facebook4 --save --variable APP_ID='960685170696563' --variable APP_NAME='yovideo-ionic'",
+    "cordova-plugin-apprate",    
     "cordova-plugin-admobpro",
-	"cordova-plugin-email-composer"
+    "cordova-plugin-email-composer"
   ],
   "cordovaPlatforms": [
     "ios",
