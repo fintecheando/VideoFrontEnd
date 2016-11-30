@@ -10,26 +10,23 @@
       <div class="list list-inset">
         <label class="item item-input">
           <i class="is-icon-avatar"></i>
-          <input type="text" name="username" ng-model="loginData.username" required placeholder="Username">
+          <input type="text" name="username" ng-model="loginData.username" required placeholder="Usuario">
         </label>
-        <div class="invalid-required" ng-show="loginForm.username.$error && loginForm.$submitted">* Username is required</div>
+        <div class="invalid-required" ng-show="loginForm.username.$error && loginForm.$submitted">* El Usuario es Requerido</div>
         <label class="item item-input">
           <i class="is-icon-padlock"></i>
-          <input type="password" name="password" ng-model="loginData.password" placeholder="Password" required>
+          <input type="password" name="password" ng-model="loginData.password" placeholder="Clave" required>
         </label>
-        <div class="invalid-required" ng-show="loginForm.password.$error && loginForm.$submitted">* Password is required</div>
+        <div class="invalid-required" ng-show="loginForm.password.$error && loginForm.$submitted">* La Clave es Requerida</div>
         <label class="item item-button">
-          <button class="button button-block button-positive" type="submit">Sign in</button>
+          <button class="button button-block button-positive" type="submit">Entrar</button>
         </label>
-        <a href="#" ng-click="forgotPassword()" class="forgot-password">Forgot Password</a>
+        <a href="#" ng-click="forgotPassword()" class="forgot-password">Recuperar Clave</a>
       </div>
     </form>
-    <div class="footer">
-      <div class="link">
-        <a href="#" ng-click="doLoginFacebook();" onclick="return false;">Sign in with Facebook <i class="is-icon-next"></i></a>
-      </div>
+    <div class="footer">      
       <div class="link" ng-click="register()">
-        <a href="#">New to YoVideo? Sign up now <i class="is-icon-next"></i></a>
+        <a href="#">Registrate para Ingresar <i class="is-icon-next"></i></a>
       </div>
     </div>
   </ion-content>
